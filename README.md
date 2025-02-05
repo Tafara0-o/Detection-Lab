@@ -1,31 +1,40 @@
-# PROJECTNAME
+# Identifying MS17-010 EternalBlue Vulnerability Using Metasploit
 
-## Objective
-[Brief Objective - Remove this afterwards]
+## Background
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+Metasploit is a versatile penetration testing and security auditing platform that allows penetration testers to identify vulnerabilities in systems and assess their security posture. The framework consists of various modules that can be combined to perform different tasks, including identifying and exploiting vulnerabilities.
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
+The MS17-010 EternalBlue vulnerability is a critical remote code execution flaw that affects the Windows Server Message Block (SMB) protocol. This vulnerability can be exploited to execute arbitrary code on the target system, leading to potential compromise and unauthorized access.
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+## Exercise Overview
 
-### Tools Used
-[Bullet Points - Remove this afterwards]
+In this exercise, I used Metasploit to identify a machine vulnerable to the MS17-010 EternalBlue exploit using an auxiliary module. The objective was to demonstrate how to use Metasploit's auxiliary modules to identify vulnerable machines and understand Proof of Concept (PoC) techniques for responsible penetration testing.
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+## Learning Objectives
 
-## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
+- Utilize Metasploit's auxiliary modules to identify vulnerable machines.
+- Understand the importance of PoC techniques in responsible penetration testing.
+- Conduct penetration tests ethically and effectively.
 
-Every screenshot should have some text explaining what the screenshot is about.
+## Importance of Proof of Concept
 
-Example below.
+Penetration testing should be conducted responsibly and with care. Instead of running full exploits that may cause damage or disruption in a production environment, using PoC techniques allows penetration testers to demonstrate vulnerabilities without causing harm. PoC provides valuable evidence to clients about existing vulnerabilities, aiding in informed decision-making for improving security.
 
-*Ref 1: Network Diagram*
+## Steps Taken
+
+1. **Launch a Vulnerable Machine**: A virtual machine running a vulnerable version of Windows (e.g., Windows XP or Windows 7) with the MS17-010 vulnerability was launched.
+   
+2. **Metasploit Console**: Within the Metasploit console, the auxiliary module `scanner/smb/smb_ms17_010` was used to scan the target machine for the MS17-010 vulnerability.
+
+3. **Scan Execution**: The auxiliary module was configured with the target machine's IP address and executed to detect the vulnerability.
+
+4. **Validation**: The output from the "MS17-010 SMB RCE Detection" auxiliary module indicated whether the host was likely vulnerable to MS17-010.
+
+## Results
+
+The Metasploit scan successfully identified the target machine as likely vulnerable to the MS17-010 EternalBlue exploit. This demonstrated the effectiveness of using Metasploit's auxiliary modules for vulnerability identification.
+
+## Conclusion
+
+The exercise showcased the importance of responsible penetration testing through PoC techniques. By identifying vulnerabilities without causing harm, penetration testers can provide valuable insights to clients, helping them make informed decisions to improve their security posture. The use of Metasploit's auxiliary modules proved to be an effective method for vulnerability assessment in this exercise.
+
